@@ -1,16 +1,17 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
+.header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 5px 20px;
+  justify-content: flex-start;
+}
+.header p {
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 5px;
+  background: yellowgreen;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 0.2em;
 }
 
 @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
 }

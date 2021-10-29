@@ -1,8 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from './Header.module.css';
 import Icon from '@components/Icon';
+import React, { useState } from 'react';
   
 export default function Header() {
+  const toggleResponsive = () => {
+    
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -22,7 +27,9 @@ export default function Header() {
         </ul>
       </nav>
       <div className={styles.menu}>
-        <Icon type="menu"/>
+        <a onClick={ toggleResponsive }>
+          <Icon type="menu" />
+        </a>
       </div>
     </header>
   )

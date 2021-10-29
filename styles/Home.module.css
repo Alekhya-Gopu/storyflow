@@ -33,12 +33,11 @@
     justify-content: center;
   }
   .main .title h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 0.5rem;
   }
   .main .title h3 {
     font-size: 1rem;
-    font-weight: 400;
     margin-bottom: 3rem;
   }
 }

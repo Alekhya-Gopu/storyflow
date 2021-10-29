@@ -7,7 +7,7 @@ export default function Header() {
       <div className={styles.logo}>
         <Image src="/storyflow-logo.svg" alt="logo" width="150" height="50"/>
       </div>
-      <nav className={styles.nav}>
+      <nav>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <a href="#">How it works</a>

@@ -30,7 +30,6 @@ const Home: NextPage = () => {
         </div>
       </main>
       <footer className={styles.footer}>
-
       </footer>
       <Script src="https://vidcom.vercel.app/main.bundle.js" />
     </div>

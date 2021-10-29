@@ -5,7 +5,8 @@ import React, { useState } from 'react';
   
 export default function Header() {
   const toggleResponsive = () => {
-    
+    const nav = document.getElementsByTagName('ul');
+    nav[0].style.display = nav[0].style.display === 'none' ? 'flex' : 'none';
   };
 
   return (

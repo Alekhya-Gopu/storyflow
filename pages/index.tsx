@@ -21,8 +21,8 @@ const Home: NextPage = () => {
             <p>redefined for web<span>.</span></p>
           </h1>
           <h3>
-            <p>Web stories is a way to reach a unique audience</p>
-            <p>within a new storytelling experience.</p>
+            <p>Web stories is a way to reach a unique audience
+            within a new storytelling experience.</p>
           </h3>
         </div>
         <div className={styles.illustration}>

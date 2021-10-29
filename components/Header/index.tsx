@@ -1,11 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from './Header.module.css';
-import Image from 'next/image';
-
+import Icon from '@components/Icon';
+  
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Image src="/storyflow-logo.svg" alt="logo" width="150" height="50"/>
+        <img src="/storyflow-logo.svg" alt="logo" width="150" height="50"/>
       </div>
       <nav>
         <ul className={styles.navList}>
@@ -20,6 +21,9 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+      <div className={styles.menu}>
+        <Icon type="menu"/>
+      </div>
     </header>
   )
 }

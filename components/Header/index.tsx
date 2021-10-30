@@ -1,12 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from './Header.module.css';
 import Icon from '@components/Icon';
-import React, { useState } from 'react';
   
 export default function Header() {
   const toggleResponsive = () => {
     const nav = document.getElementsByTagName('ul');
-    nav[0].style.display = nav[0].style.display === 'none' ? 'flex' : 'none';
+    if (!nav[0].style.display) {
+      nav[0].style.display = 'flex';
+    } else {
+      nav[0].style.display = nav[0].style.display === 'none' ? 'flex' : 'none';
+    }
   };
 
   return (

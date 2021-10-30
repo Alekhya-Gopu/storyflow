@@ -35,6 +35,7 @@
   .main .title h1 {
     font-size: 1.6rem;
     line-height: 0.5rem;
+    letter-spacing: 0.3px;
   }
   .main .title h3 {
     font-size: 1rem;

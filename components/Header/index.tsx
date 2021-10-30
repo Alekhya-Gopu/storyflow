@@ -20,7 +20,7 @@ export default function Header() {
             <a href="#">How it works</a>
           </li>
           <li className={styles.navItem}>
-            <a href="#">Request a demo</a>
+            <a href="#">Schedule a demo</a>
           </li>
           <li className={styles.navItem}>
             <a href="#">About</a> 

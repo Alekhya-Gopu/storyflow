@@ -21,6 +21,12 @@
   font-weight: 400;
 }
 
+.tryIt {
+  position: absolute;
+  bottom: 0;
+  left: 80px;
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 0 2rem;

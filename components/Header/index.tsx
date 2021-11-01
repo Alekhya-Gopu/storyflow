@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from './Header.module.css';
 import Icon from '@components/Icon';
-  
+
 export default function Header() {
   const toggleResponsive = () => {
     const nav = document.getElementsByTagName('ul');
@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img src="/storyflow-logo.svg" alt="logo" width="150" height="50"/>
+        <img src="/storyflow-logo.svg" alt="logo" width="150" height="50" />
       </div>
       <nav>
         <ul className={styles.navList}>
@@ -26,12 +26,12 @@ export default function Header() {
             <a href="https://calendly.com/src200" target="_blank" rel="noreferrer">Schedule a demo</a>
           </li>
           <li className={styles.navItem}>
-            <a href="#">About</a> 
+            <a href="#">About</a>
           </li>
         </ul>
       </nav>
       <div className={styles.menu}>
-        <a onClick={ toggleResponsive }>
+        <a onClick={toggleResponsive}>
           <Icon type="menu" />
         </a>
       </div>

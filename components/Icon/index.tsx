@@ -1,4 +1,3 @@
-import styles from './Header.module.css';
 import { icons, } from 'feather-icons';
 
 interface IconProps {

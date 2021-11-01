@@ -22,7 +22,7 @@
 }
 
 .tryIt {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 80px;
 }

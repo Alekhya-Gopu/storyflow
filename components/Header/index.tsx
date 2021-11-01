@@ -23,7 +23,7 @@ export default function Header() {
             <a href="#">How it works</a>
           </li>
           <li className={styles.navItem}>
-            <a href="#">Schedule a demo</a>
+            <a href="https://calendly.com/src200" target="_blank" rel="noreferrer">Schedule a demo</a>
           </li>
           <li className={styles.navItem}>
             <a href="#">About</a> 

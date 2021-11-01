@@ -2,7 +2,11 @@ import Script from 'next/script';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 
-export default function Layout({ children }) {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header />

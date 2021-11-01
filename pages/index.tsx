@@ -10,7 +10,11 @@ const Home: NextPage = () => {
     <div className={styles.container}>
      <Head>
         <title>Storyflow</title>
-        <meta name="description" content="Add a quick video widget to your website." />
+        <meta name="description" content="Improve storytelling by just adding a video widget to your website in seconds. " />
+        <meta property="og:title" content="Storyflow" />
+        <meta property="og:description" content="Immersive storytelling redefined for web." />
+        <meta property="og:image" content="/storyflow-favicon.svg" />
+        <meta property="og:url" content="https://storyflow.video" />
         <link rel="icon" href="/storyflow-favicon.svg" />
       </Head>
       <Header />

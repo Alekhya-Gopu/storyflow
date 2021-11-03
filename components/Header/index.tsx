@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from './Header.module.css';
 import Icon from '@components/Icon';
+import Link from 'next/link';
 
 export default function Header() {
   const toggleResponsive = () => {
@@ -36,9 +37,9 @@ export default function Header() {
         </ul>
       </nav>
       <div className={styles.login}>
-        <a href="/login">
+        <Link href="/login">
           Login
-        </a>
+        </Link>
       </div>
     </header>
   )

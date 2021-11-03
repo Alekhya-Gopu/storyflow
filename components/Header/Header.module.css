@@ -1,11 +1,17 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 20rem;
-  padding: 2rem 5rem;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  background: var(--secondary-color);
 }
 .logo {
   filter: drop-shadow(0px 1.9966px 1.9966px rgba(0, 0, 0, 0.25));
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .navList {
   display: flex;
@@ -28,6 +34,15 @@
   background: rgba(245, 200, 130, 0.2);
   border-radius: 20px;
 }
+.login {
+  padding: 8px 16px;
+  font-size: 19px;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 20px;
+  background: var(--primary-color);
+}
 .menu {
   display: none;
 }
@@ -36,9 +51,9 @@
   .header {
     display: flex;
     align-items: center;
-    gap: 0;
     justify-content: space-between;
-    padding: 2rem 2rem 0 2rem;
+    padding: 1rem;
+    background: var(--secondary-color);
   }
   .logo {
     filter: drop-shadow(0px 1.9966px 1.9966px rgba(0, 0, 0, 0.25));
@@ -49,7 +64,7 @@
     z-index: 3;
     position: absolute;
     top: 5rem;
-    right: 2rem;
+    left: 1rem;
     background: #ede4d5;
     gap: 0;
     display: flex;

@@ -14,10 +14,15 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
+      <div className={styles.menu}>
+        <a onClick={toggleResponsive}>
+          <Icon type="menu" />
+        </a>
+      </div>
       <div className={styles.logo}>
         <img src="/storyflow-logo.svg" alt="logo" width="150" height="50" />
       </div>
-      <nav>
+      <nav className={styles.nav}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <a href="#">How it works</a>
@@ -30,9 +35,9 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <div className={styles.menu}>
-        <a onClick={toggleResponsive}>
-          <Icon type="menu" />
+      <div className={styles.login}>
+        <a href="/login">
+          Login
         </a>
       </div>
     </header>

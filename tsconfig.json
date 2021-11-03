@@ -20,13 +20,25 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-        "@components/*": ["./components/*"]
+      "@styles/*": [
+        "./styles/*"
+      ],
+      "@components/*": [
+        "./components/*"
+      ],
+      "@firebase/*": [
+        "firebase/*"
+      ],
+      "@supabase/*": [
+        "./supabase/*"
+      ]
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "firebase/firebase.ts"
   ],
   "exclude": [
     "node_modules"

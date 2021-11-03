@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { supabase } from '@supabase/client';
 import Button from '@components/Button';
 import Input from '@components/Input';
-import styles from '@styles/Login.module.scss';
+import styles from '@styles/Login.module.css';
 
-const Auth: NextPage = () => {
+const Login: NextPage = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('')
 
@@ -23,17 +23,17 @@ const Auth: NextPage = () => {
     }
 
     return (
-        <div className="row flex flex-center">
-            <div className="col-6 form-widget">
+        <div className={styles.login}>
+            <div className={styles.loginForm}>
                 <h3 className="description">Login in via magic link</h3>
-                <div>
+                <div className={styles.emailInput}>
                     <Input
                         type="email"
                         placeholder="Email address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)} />
                 </div>
-                <div>
+                <div className={styles.loginButton}>
                     <Button
                         disabled={loading}
                         onClick={() => handleLogin(email)}>
@@ -45,4 +45,4 @@ const Auth: NextPage = () => {
     )
 }
 
-export default Auth;
+export default Login;

@@ -4,7 +4,7 @@
     margin-bottom: 0;
     color: white;
     background-color: var(--primary-color);
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.42857143;
     text-align: center;
@@ -20,4 +20,14 @@
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+}
+
+.small .button {
+    font-size: 0.8em;
+}
+.medium .button {
+    font-size: 1em;
+}
+.large .button {
+    font-size: 1.2em;
 }

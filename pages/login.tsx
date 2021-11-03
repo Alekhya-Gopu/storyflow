@@ -25,7 +25,7 @@ const Login: NextPage = () => {
     return (
         <div className={styles.login}>
             <div className={styles.loginForm}>
-                <h3 className="description">Login in via magic link</h3>
+                <h3 className={styles.formLabel}>Login in via Magic Link</h3>
                 <div className={styles.emailInput}>
                     <Input
                         type="email"

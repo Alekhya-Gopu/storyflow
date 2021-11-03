@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import Button from '@components/Button';
 import styles from '@styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
           <p>Web stories is a way to reach a unique audience
             within a new storytelling experience.</p>
         </h3>
+        <Button size="large">Get Started</Button>
       </div>
       <div className={styles.illustration}>
         <Image src="/illustration.svg" alt="Storyflow illustration" width={650} height={400} />

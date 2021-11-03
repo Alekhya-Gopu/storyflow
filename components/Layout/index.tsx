@@ -9,10 +9,10 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <>
+    <div className={styles.layout}>
       <title>Storyflow</title>
       <Header />
-      <main>
+      <main className={styles.main}>
         <div className={styles.container}>
           {children}
         </div>
@@ -22,6 +22,6 @@ export default function Layout({ children }: LayoutProps) {
         <Image src="/try-it-out.svg" alt="try it out" width={100} height={100} />
       </div>
       <Script src="https://vidcom.vercel.app/main.bundle.js" />
-    </>
+    </div>
   )
 }

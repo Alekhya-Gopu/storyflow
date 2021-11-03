@@ -4,8 +4,8 @@
     margin-bottom: 0;
     color: white;
     background-color: var(--primary-color);
+    font-family: inherit;
     font-size: 1rem;
-    font-weight: 400;
     line-height: 1.42857143;
     text-align: center;
     white-space: nowrap;

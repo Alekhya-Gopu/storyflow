@@ -20,11 +20,17 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@styles/*": [
+        "./styles/*"
+      ],
       "@components/*": [
         "./components/*"
       ],
       "@firebase/*": [
         "firebase/*"
+      ],
+      "@supabase/*": [
+        "./supabase/*"
       ]
     }
   },

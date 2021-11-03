@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^1.25.2",
     "feather-icons": "^4.28.0",
     "firebase": "^9.2.0",
     "next": "12.0.1",

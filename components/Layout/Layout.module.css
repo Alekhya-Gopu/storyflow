@@ -1,6 +1,8 @@
 .layout {
-    /* height: 100vh; */
+    min-height: 100%;
     position: relative;
+    background-color: white;
+    background-image: linear-gradient(40deg, #f7eddf 0%, #ffffff 98%, #ffffff 99%);
 }
 .container {
     padding: 0 5rem;

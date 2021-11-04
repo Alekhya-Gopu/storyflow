@@ -35,6 +35,7 @@ class MyDocument extends Document {
           <meta property="twitter:description" content="Improve storytelling by just adding a video widget to your website in seconds." />
           <meta property="twitter:image" content="/storyflow-meta.svg" />
           <link rel="icon" href="/storyflow-favicon.svg" />
+          <link rel="apple-touch-icon" href="/storyflow-favicon.svg" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet" />

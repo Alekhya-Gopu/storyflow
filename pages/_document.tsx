@@ -10,6 +10,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta charSet="utf-8" />
+          <meta name="keywords" content="stories, web stories, video" />
+          <meta name="author" content="Sharath Challa" />
+          <meta httpEquiv="Content-Language" content="en" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="description" content="Improve storytelling by just adding a video widget to your website in seconds." />
           <meta property="og:title" content="Storyflow" />
           <meta property="og:description" content="Immersive storytelling redefined for web." />

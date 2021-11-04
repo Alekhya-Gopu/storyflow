@@ -6,7 +6,7 @@ import Input from '@components/Input';
 import Button from '@components/Button';
 import Icon from '@components/Icon';
 
-export default function Protected({ user }: User) {
+export default function Create(user: User) {
     return (
         <div className={styles.create}>
             <h3>Add your Story Videos</h3>

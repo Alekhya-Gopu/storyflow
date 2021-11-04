@@ -24,6 +24,7 @@ a {
 :root {
   --primary-color: #ff7e1d;
   --secondary-color: #F7EDDF;
+  --gray-color: rgba(190, 172, 143, 0.2);
 }
 
 /* @media (max-width: 600px) {

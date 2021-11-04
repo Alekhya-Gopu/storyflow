@@ -36,7 +36,7 @@
 }
 .navItem:hover {
   cursor: pointer;
-  background: rgba(245, 200, 130, 0.2);
+  background: var(--gray-color);
   border-radius: 20px;
 }
 .login {

@@ -22,7 +22,7 @@ export default function Button({ children, onClick, disabled, size }: ButtonProp
     };
 
     return (
-        <div className={getClassNameForSize(size)}>
+        <div className={getClassNameForSize(size)} style={{ width: '100%' }}>
             <button
                 className={styles.button}
                 onClick={onClick}

@@ -13,7 +13,9 @@ const Login: NextPage = () => {
     const handleLogin = async (email: string) => {
         try {
             setLoading(true)
-            const { user, session, error } = await supabase.auth.signIn({ email });
+            const { user, session, error } = await supabase.auth.signIn({ email }, {
+                redirectTo: window.location.origin
+            });
             if (error) throw error;
             // TODO: add toast
             console.log('Check your email for the login link!');

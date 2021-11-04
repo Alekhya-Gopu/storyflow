@@ -21,7 +21,11 @@ export default function Header() {
         </a>
       </div>
       <div className={styles.logo}>
-        <img src="/storyflow-logo.svg" alt="logo" width="150" height="50" />
+        <Link href="/">
+          <a>
+            <img src="/storyflow-logo.svg" alt="logo" width="150" height="50" />
+          </a>
+        </Link>
       </div>
       <nav className={styles.nav}>
         <ul className={styles.navList}>

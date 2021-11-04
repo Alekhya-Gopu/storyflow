@@ -1,7 +1,7 @@
 import { supabase } from '@supabase/client';
 import { GetServerSideProps } from 'next';
 
-export default function Protected({ user }) {
+export default function Protected({ user }: { user: any }) {
     console.log({ user })
     return (
         <div style={{ maxWidth: '420px', margin: '96px auto' }}>

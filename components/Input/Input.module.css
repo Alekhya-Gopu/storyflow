@@ -1,13 +1,33 @@
 .input {
     width: 100%;
     height: 100%;
-    border: none;
+    position: relative;
+}
+
+.input svg {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    color: white;
+}
+
+.inputField {
+    appearance: none;
+    width: 100%;
+    height: 3rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
     outline: none;
-    padding: 0;
-    font-size: 1.2rem;
+    padding: 0.5rem 0.75rem 0.5rem 42px;
+    font-size: inherit;
     font-family: inherit;
     font-weight: inherit;
-    color: inherit;
+    color: white;
     background: transparent;
     transition: all 0.2s ease-in-out;
+}
+.inputField::placeholder {
+    color: var(--secondary-color);
 }

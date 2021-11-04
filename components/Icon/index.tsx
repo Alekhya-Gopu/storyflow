@@ -3,9 +3,10 @@ import { icons, } from 'feather-icons';
 interface IconProps {
     type: string;
     size?: number;
+    strokeWidth?: number;
 }
 
-export default function Icon({ type, size=24 }: IconProps) {
+export default function Icon({ type, size = 24, strokeWidth = 2 }: IconProps) {
     return (
         <svg
             className="icon"
@@ -13,10 +14,10 @@ export default function Icon({ type, size=24 }: IconProps) {
             width={size}
             height={size}
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth={strokeWidth}
             fill="none"
             shapeRendering="geometricPrecision"
             dangerouslySetInnerHTML={{ __html: icons[type].toString() }}>
-            </svg>
+        </svg>
     );
 }

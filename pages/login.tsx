@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { supabase } from '@supabase/client';
 import Button from '@components/Button';
 import Input from '@components/Input';
+import Icon from '@components/Icon';
 import styles from '@styles/Login.module.css';
 
 const Login: NextPage = () => {
@@ -25,16 +26,20 @@ const Login: NextPage = () => {
     return (
         <div className={styles.login}>
             <div className={styles.loginForm}>
-                <h3 className={styles.formLabel}>Login in via Magic Link</h3>
+                <h3 className={styles.formLabel}>
+                    <Icon type="user" size={28} /> Login
+                </h3>
                 <div className={styles.emailInput}>
                     <Input
                         type="email"
+                        icon="mail"
                         placeholder="Email address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className={styles.loginButton}>
                     <Button
+                        size="large"
                         disabled={loading}
                         onClick={() => handleLogin(email)}>
                         <span>{loading ? 'Sending...' : 'Send magic link'}</span>

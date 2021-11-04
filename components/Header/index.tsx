@@ -14,37 +14,40 @@ export default function Header() {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.menu}>
-        <a onClick={toggleResponsive}>
-          <Icon type="menu" />
-        </a>
-      </div>
-      <div className={styles.logo}>
-        <Link href="/">
-          <a>
-            <img src="/storyflow-logo.svg" alt="logo" width="150" height="50" />
+    <>
+      <div className={styles.topLine}></div>
+      <header className={styles.header}>
+        <div className={styles.menu}>
+          <a onClick={toggleResponsive}>
+            <Icon type="menu" />
           </a>
-        </Link>
-      </div>
-      <nav className={styles.nav}>
-        <ul className={styles.navList}>
-          <li className={styles.navItem}>
-            <a href="#">How it works</a>
-          </li>
-          <li className={styles.navItem}>
-            <a href="https://calendly.com/src200" target="_blank" rel="noreferrer">Schedule a demo</a>
-          </li>
-          <li className={styles.navItem}>
-            <a href="#">About</a>
-          </li>
-        </ul>
-      </nav>
-      <div className={styles.login}>
-        <Link href="/login">
-          Login
-        </Link>
-      </div>
-    </header>
+        </div>
+        <div className={styles.logo}>
+          <Link href="/">
+            <a>
+              <img src="/storyflow-logo.svg" alt="logo" width="150" height="50" />
+            </a>
+          </Link>
+        </div>
+        <nav className={styles.nav}>
+          <ul className={styles.navList}>
+            <li className={styles.navItem}>
+              <a href="#">How it works</a>
+            </li>
+            <li className={styles.navItem}>
+              <a href="https://calendly.com/src200" target="_blank" rel="noreferrer">Schedule a demo</a>
+            </li>
+            <li className={styles.navItem}>
+              <a href="#">About</a>
+            </li>
+          </ul>
+        </nav>
+        <div className={styles.login}>
+          <Link href="/login">
+            Login
+          </Link>
+        </div>
+      </header>
+    </>
   )
 }

@@ -23,11 +23,14 @@
 }
 
 .small .button {
-    font-size: 0.8em;
+    font-size: 0.6em;
+    padding: 2px 6px;
 }
 .medium .button {
     font-size: 1em;
+    padding: 6px 12px;
 }
 .large .button {
-    font-size: 1.2em;
+    font-size: 1.4em;
+    padding: 8px 14px;
 }

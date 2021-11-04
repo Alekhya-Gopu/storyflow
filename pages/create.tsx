@@ -37,7 +37,11 @@ export default function Create({ user }: CreateProps) {
     return (
         <div className={styles.create}>
             <h3>Add your Story Videos</h3>
-            <div className={styles.inputs}>
+            <form className={styles.inputs}
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    saveStory();
+                }}>
                 <Input
                     placeholder="Title"
                     icon="edit-3"
@@ -60,12 +64,12 @@ export default function Create({ user }: CreateProps) {
                 <Button
                     size="large"
                     disabled={saving}
-                    onClick={saveStory}>
+                    type='submit'>
                     <Icon type="plus-circle" />
                     <span>{saving ? 'Saving...' : 'Save'}</span>
                 </Button>
-            </div>
-        </div>
+            </form>
+        </div >
     )
 }
 

@@ -32,22 +32,27 @@ const Login: NextPage = () => {
                 <h3 className={styles.formLabel}>
                     <Icon type="user" size={28} /> Login
                 </h3>
-                <div className={styles.emailInput}>
-                    <Input
-                        type="email"
-                        icon="mail"
-                        placeholder="Email address"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <div className={styles.loginButton}>
-                    <Button
-                        size="large"
-                        disabled={loading}
-                        onClick={() => handleLogin(email)}>
-                        <span>{loading ? 'Sending...' : 'Send magic link'}</span>
-                    </Button>
-                </div>
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    handleLogin(email);
+                }}>
+                    <div className={styles.emailInput}>
+                        <Input
+                            type="email"
+                            icon="mail"
+                            placeholder="Email address"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)} />
+                    </div>
+                    <div className={styles.loginButton}>
+                        <Button
+                            size="large"
+                            type="submit"
+                            disabled={loading}>
+                            <span>{loading ? 'Sending...' : 'Send magic link'}</span>
+                        </Button>
+                    </div>
+                </form>
             </div>
         </div>
     )

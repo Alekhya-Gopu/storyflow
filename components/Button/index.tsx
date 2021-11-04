@@ -4,10 +4,11 @@ interface ButtonProps {
     children: React.ReactNode;
     onClick?: () => void;
     disabled?: boolean;
+    type?: 'button' | 'submit' | 'reset';
     size?: 'small' | 'medium' | 'large';
 }
 
-export default function Button({ children, onClick, disabled, size }: ButtonProps) {
+export default function Button({ children, onClick, type = 'button', disabled, size }: ButtonProps) {
     const getClassNameForSize = (size: ButtonProps['size']) => {
         switch (size) {
             case 'small':
@@ -26,6 +27,7 @@ export default function Button({ children, onClick, disabled, size }: ButtonProp
             <button
                 className={styles.button}
                 onClick={onClick}
+                type={type}
                 disabled={disabled}>
                 {children}
             </button>

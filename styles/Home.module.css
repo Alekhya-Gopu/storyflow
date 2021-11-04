@@ -18,6 +18,10 @@
   font-weight: 400;
 }
 
+.main .title button {
+  width: 40%;
+}
+
 @media (max-width: 600px) {
   .main {
     margin-top: 3rem;
@@ -34,6 +38,10 @@
   }
   .main .title h3 {
     font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+  .main .title button {
+    width: 100%;
     margin-bottom: 3rem;
   }
 }

@@ -8,18 +8,19 @@ import styles from '@styles/Login.module.css';
 
 const Login: NextPage = () => {
     const [loading, setLoading] = useState<boolean>(false);
-    const [email, setEmail] = useState<string>('')
+    const [email, setEmail] = useState<string>('');
 
     const handleLogin = async (email: string) => {
         try {
             setLoading(true)
             const { user, session, error } = await supabase.auth.signIn({ email });
-            if (error) throw error
-            alert('Check your email for the login link!')
+            if (error) throw error;
+            // TODO: add toast
+            console.log('Check your email for the login link!');
         } catch (error) {
-            // alert(error.error_description || error.message)
+            setLoading(false);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     }
 

@@ -20,6 +20,13 @@
 
 .main .title button {
   width: 40%;
+  position: relative;
+}
+
+.main .title button svg {
+  position: relative;
+  display: inline-block;
+  top: 4px;
 }
 
 @media (max-width: 600px) {

@@ -3,7 +3,11 @@ import styles from './Header.module.css';
 import Icon from '@components/Icon';
 import Link from 'next/link';
 
-export default function Header() {
+interface HeaderProps {
+  authState?: string;
+}
+
+export default function Header({ authState }: HeaderProps) {
   const toggleResponsive = () => {
     const nav = document.getElementsByTagName('ul');
     if (!nav[0].style.display) {
@@ -32,21 +36,34 @@ export default function Header() {
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <a href="#">How it works</a>
+              <Link href="/">
+                <a>How it works</a>
+              </Link>
             </li>
             <li className={styles.navItem}>
               <a href="https://calendly.com/src200" target="_blank" rel="noreferrer">Schedule a demo</a>
             </li>
             <li className={styles.navItem}>
-              <a href="#">About</a>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
             </li>
           </ul>
         </nav>
-        <div className={styles.login}>
-          <Link href="/login">
-            Login
-          </Link>
-        </div>
+        {authState === 'authenticated' ? (
+          <div className={styles.auth}>
+            <Link href="/profile">
+              <a>
+                <Icon type="user" />
+              </a>
+            </Link>
+          </div>) : (
+          <div className={styles.login}>
+            <Link href="/login">
+              Login
+            </Link>
+          </div>
+        )}
       </header>
     </>
   )

@@ -20,19 +20,33 @@ export default function Create({ user }: CreateProps) {
     const saveStory = async () => {
         setSaving(true);
         const story = {
+            name: title,
+            description: description,
+            url: storyUrl,
+            user_id: user.id,
+        };
+
+        const { data, error } = await supabase.from('stories').insert(story);
+        setSaving(false);
+        if (error) {
+            console.error(error);
+        }
+    };
+
+    const removeStory = async () => {
+        const story = {
             story_name: title,
             story_desc: description,
             story_url: storyUrl,
             user_uid: user.id,
         };
 
-        const { data, error } = await supabase.from('user_stories').insert(story);
+        const { data, error } = await supabase.from('stories').insert(story);
         setSaving(false);
         if (error) {
             console.error(error);
         }
-        console.log(data);
-    };
+    }
 
     return (
         <div className={styles.create}>

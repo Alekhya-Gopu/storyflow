@@ -13,7 +13,8 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const router = useRouter();
-  const [authenticatedState, setAuthenticatedState] = useState('not-authenticated');
+  const [authenticatedState, setAuthenticatedState] = useState<string>('not-authenticated');
+  const [userEmail, setUserEmail] = useState<string>();
 
   useEffect(() => {
     /* fires when a user signs in or out */
@@ -41,6 +42,7 @@ export default function Layout({ children }: LayoutProps) {
     const user = await supabase.auth.user();
     if (user) {
       setAuthenticatedState('authenticated');
+      setUserEmail(user.email);
     }
   }
 
@@ -57,7 +59,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className={styles.layout}>
       <title>Storyflow</title>
-      <Header authState={authenticatedState} />
+      <Header authState={authenticatedState} email={userEmail} />
       <main className={styles.main}>
         <div className={styles.container}>
           {children}

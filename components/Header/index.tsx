@@ -5,9 +5,10 @@ import Link from 'next/link';
 
 interface HeaderProps {
   authState?: string;
+  email?: string;
 }
 
-export default function Header({ authState }: HeaderProps) {
+export default function Header({ authState, email }: HeaderProps) {
   const toggleResponsive = () => {
     const nav = document.getElementsByTagName('ul');
     if (!nav[0].style.display) {
@@ -51,10 +52,10 @@ export default function Header({ authState }: HeaderProps) {
           </ul>
         </nav>
         {authState === 'authenticated' ? (
-          <div className={styles.auth}>
+          <div className={styles.profile}>
             <Link href="/profile">
               <a>
-                <Icon type="user" />
+                <Icon type="user" /> <span>{email}</span>
               </a>
             </Link>
           </div>) : (

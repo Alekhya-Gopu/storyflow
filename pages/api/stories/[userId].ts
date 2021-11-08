@@ -20,8 +20,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         const { data, error } = await supabase
             .from('stories')
             .select('url')
-            .eq('user_id', userId)
-        res.status(200).json(data);
+            .eq('user_id', userId);
+        if (error) {
+            res.status(400).json(error);
+        } else {
+            res.status(200).json(data);
+        }
     } else {
         res.status(400).json({ error: 'No stories available for the user' });
     }

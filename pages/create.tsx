@@ -1,17 +1,19 @@
+import Input from '@components/Input';
+import Button from '@components/Button';
+import Icon from '@components/Icon';
 import { supabase } from '@supabase/client';
 import { GetServerSideProps } from 'next';
 import { useState } from 'react';
 import { User } from '@supabase/supabase-js';
 import styles from '@styles/Create.module.css';
-import Input from '@components/Input';
-import Button from '@components/Button';
-import Icon from '@components/Icon';
+import { useRouter } from 'next/router';
 
 interface CreateProps {
     user: User;
 };
 
 export default function Create({ user }: CreateProps) {
+    const router = useRouter();
     const [saving, setSaving] = useState<boolean>(false);
     const [title, setTitle] = useState<string>('');
     const [description, setDescription] = useState<string>('');
@@ -27,26 +29,14 @@ export default function Create({ user }: CreateProps) {
         };
 
         const { data, error } = await supabase.from('stories').insert(story);
-        setSaving(false);
-        if (error) {
+        if (data) {
+            router.push('/stories');
+        } else {
             console.error(error);
         }
+
+        setSaving(false);
     };
-
-    const removeStory = async () => {
-        const story = {
-            story_name: title,
-            story_desc: description,
-            story_url: storyUrl,
-            user_uid: user.id,
-        };
-
-        const { data, error } = await supabase.from('stories').insert(story);
-        setSaving(false);
-        if (error) {
-            console.error(error);
-        }
-    }
 
     return (
         <div className={styles.create}>
@@ -54,7 +44,7 @@ export default function Create({ user }: CreateProps) {
             <form className={styles.inputs}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    saveStory();
+                    title && storyUrl && saveStory();
                 }}>
                 <Input
                     placeholder="Title"
@@ -75,15 +65,17 @@ export default function Create({ user }: CreateProps) {
                     value={storyUrl}
                     onChange={(e) => setStoryUrl(e.target.value)}
                 />
-                <Button
-                    size="large"
-                    disabled={saving}
-                    type='submit'>
-                    <Icon type="plus-circle" />
-                    <span>{saving ? 'Saving...' : 'Save'}</span>
-                </Button>
+                <div className={styles.submitBtn}>
+                    <Button
+                        size="large"
+                        disabled={saving}
+                        type='submit'>
+                        <Icon type="plus-circle" />
+                        <span>{saving ? 'Saving...' : 'Save'}</span>
+                    </Button>
+                </div>
             </form>
-        </div >
+        </div>
     )
 }
 

@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           <p>Web stories is a way to reach a unique audience
             within a new storytelling experience.</p>
         </h3>
-        <Link href="/create" passHref>
+        <Link href="/stories" passHref>
           <Button size="large">Get Started <Icon type="arrow-right" /></Button>
         </Link>
       </div>

@@ -23,7 +23,7 @@ export default function Button({ children, onClick, type = 'button', disabled, s
     };
 
     return (
-        <div className={getClassNameForSize(size)} style={{ width: '100%' }}>
+        <div className={getClassNameForSize(size)}>
             <button
                 className={styles.button}
                 onClick={onClick}

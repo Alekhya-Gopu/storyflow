@@ -6,6 +6,8 @@ import styles from './Layout.module.css';
 import { useState, useEffect } from 'react';
 import { supabase } from '@supabase/client';
 import { useRouter } from 'next/router';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -65,6 +67,7 @@ export default function Layout({ children }: LayoutProps) {
           {children}
         </div>
       </main>
+      <ToastContainer />
       <Footer />
       <div className={styles.tryIt}>
         <Image src="/try-it-out.svg" alt="try it out" width={100} height={100} />

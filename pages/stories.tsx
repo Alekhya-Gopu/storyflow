@@ -8,6 +8,7 @@ import Icon from '@components/Icon';
 import Card from '@components/Card';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 import { CopyBlock, atomOneLight } from "react-code-blocks";
 
 interface StoryProps {
@@ -29,6 +30,7 @@ export default function Stories({ user }: StoryProps) {
 
     const fetchStories = async () => {
         setFetching(true);
+        setStories([]);
         const { data, error } = await supabase.from('stories').select('*').match({ user_id: user.id });;
 
         if (data) {
@@ -43,9 +45,11 @@ export default function Stories({ user }: StoryProps) {
         const { data, error } = await supabase.from('stories').delete().match({ id: story_id });
         if (data) {
             fetchStories();
+            toast('Removed story successfully!', { type: 'success' });
         }
         if (error) {
             console.error(error);
+            toast('Something went wrong. Please try again!', { type: 'error' });
         }
     };
 

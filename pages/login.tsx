@@ -4,11 +4,13 @@ import { supabase } from '@supabase/client';
 import Button from '@components/Button';
 import Input from '@components/Input';
 import Icon from '@components/Icon';
+import { toast } from 'react-toastify';
 import styles from '@styles/Login.module.css';
 
 const Login: NextPage = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('');
+    const notify = () => toast("Wow so easy!");
 
     const handleLogin = async (email: string) => {
         try {
@@ -16,8 +18,13 @@ const Login: NextPage = () => {
             const { user, session, error } = await supabase.auth.signIn({ email }, {
                 redirectTo: window.location.origin
             });
-            if (error) throw error;
-            // TODO: add toast
+
+            toast('Please check your inbox/spam folders in mailbox for magic link to login', { type: 'success' });
+
+            if (error) {
+                toast('Something went wrong. Please try again', { type: 'error' });
+            }
+
             console.log('Check your email for the login link!');
         } catch (error) {
             setLoading(false);

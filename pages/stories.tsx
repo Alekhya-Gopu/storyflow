@@ -71,9 +71,9 @@ export default function Stories({ user }: StoryProps) {
                     </Button>
                 </Link>
             </div>
+            {fetching && <p>Fetching user stories...</p>}
+            {!fetching && stories.length <= 0 && <p>No stories found! Please add stories by clicking Add stories button.</p>}
             <div className={styles.stories}>
-                {fetching && <p>Fetching user stories...</p>}
-                {!fetching && stories.length <= 0 && <p>No stories found! Please add stories by clicking Add stories button.</p>}
                 {stories.map((story) => (
                     <Card key={story.id}
                         title={story.name}

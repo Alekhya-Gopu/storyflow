@@ -8,6 +8,7 @@ import Icon from '@components/Icon';
 import Card from '@components/Card';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { CopyBlock, atomOneLight } from "react-code-blocks";
 
 interface StoryProps {
     user: User;
@@ -76,7 +77,27 @@ export default function Stories({ user }: StoryProps) {
                         ]} />
                 ))}
             </div>
-        </div>
+            <div className={styles.integration}>
+                <h2 className={styles.title}>Integration Script</h2>
+                <p>
+                    To get the Storyflow widget to appear on your web app simply copy and paste the snippet
+                    below before the body tag on every page where you want the Storyflow widget to appear for website visitors.
+                </p>
+                <div className={styles.codeBlock}>
+                    <CopyBlock
+                        text={
+                            `
+    <script type="text/javascript" async id="storyflow-script" src="https://storyflow-widget.vercel.app/main.bundle.js" data-storyflow-user="${user.id}" />
+                            `
+                        }
+                        language='javascript'
+                        showLineNumbers={false}
+                        theme={atomOneLight}
+                        codeBlock
+                    />
+                </div>
+            </div>
+        </div >
     );
 }
 

@@ -9,7 +9,7 @@
     gap: 3rem;
     width: 100%;
 }
-.storiesHead .title {
+.title {
     color: var(--primary-color);
 }
 .storiesHead button {
@@ -22,9 +22,40 @@
     margin-right: 0.5rem;
 }
 .stories {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding: 2rem 0;
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    border-bottom: 2px solid var(--secondary-color);
+}
+.integration .codeBlock > div {
+    border-left: 4px solid var(--primary-color);
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+.integration .codeBlock > div > span{
+    background: var(--secondary-color) !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+.integration .codeBlock code {
+    background: var(--secondary-color) !important;
+}
+
+.integration .codeBlock button {
+    cursor: pointer;
+    background: var(--primary-color);
+    border: none;
+    width: 32px;
+    height: 32px;
+}
+.integration .codeBlock button svg {
+    color: white !important;
+    width: 20px;
+    height: 20px;
+}
+.integration .codeBlock button svg path {
+    fill: currentcolor;
 }

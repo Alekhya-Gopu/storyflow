@@ -27,7 +27,7 @@ export default function Stories({ user }: StoryProps) {
     const [stories, setStories] = useState<Story[]>([]);
 
     const fetchStories = async () => {
-        const { data, error } = await supabase.from('stories').select('*');
+        const { data, error } = await supabase.from('stories').select('*').match({ user_id: user.id });;
 
         if (data) {
             setStories(data);

@@ -59,6 +59,7 @@ export default function Stories({ user }: StoryProps) {
                 <h2 className={styles.title}>Your Stories</h2>
                 <Link href='/create' passHref>
                     <Button size='large'>
+                        <Icon type="plus-circle" />
                         Add stories
                     </Button>
                 </Link>

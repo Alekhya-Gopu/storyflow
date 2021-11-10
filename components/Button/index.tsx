@@ -1,8 +1,9 @@
+import React from 'react';
 import styles from './Button.module.css';
 
 interface ButtonProps {
     children: React.ReactNode;
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent) => void;
     disabled?: boolean;
     type?: 'button' | 'submit' | 'reset';
     size?: 'small' | 'medium' | 'large';

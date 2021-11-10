@@ -12,10 +12,19 @@
 .storiesHead .title {
     color: var(--primary-color);
 }
+.storiesHead button {
+    position: relative;
+}
+.storiesHead button svg {
+    position: relative;
+    display: inline-block;
+    top: 4px;
+    margin-right: 0.5rem;
+}
 .stories {
     padding-top: 2rem;
     padding-bottom: 1rem;
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }

@@ -22,7 +22,10 @@ export default function Card({ id, title, description, url, cardActions }: CardP
                 <div className={styles.cardActions}>
                     {id && cardActions && (
                         cardActions.map((item, index) => (
-                            <Button key={id + index} size="small" onClick={() => item.action}>
+                            <Button key={id + index} size="small" onClick={(e: React.MouseEvent) => {
+                                e.preventDefault();
+                                item.action();
+                            }}>
                                 <Icon type={item.icon} size={18} />
                             </Button>
                         ))

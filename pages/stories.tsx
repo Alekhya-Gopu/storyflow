@@ -41,6 +41,9 @@ export default function Stories({ user }: StoryProps) {
 
     const removeStory = async (story_id: string) => {
         const { data, error } = await supabase.from('stories').delete().match({ id: story_id });
+        if (data) {
+            fetchStories();
+        }
         if (error) {
             console.error(error);
         }
@@ -69,8 +72,8 @@ export default function Stories({ user }: StoryProps) {
                 </Link>
             </div>
             <div className={styles.stories}>
-                {fetching && 'Fetching user stories...'}
-                {!fetching && stories.length <= 0 && 'No stories found! Please add stories by clicking Add stories button.'}
+                {fetching && <p>Fetching user stories...</p>}
+                {!fetching && stories.length <= 0 && <p>No stories found! Please add stories by clicking Add stories button.</p>}
                 {stories.map((story) => (
                     <Card key={story.id}
                         title={story.name}

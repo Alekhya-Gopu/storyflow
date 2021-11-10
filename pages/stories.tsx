@@ -24,9 +24,11 @@ interface Story {
 
 export default function Stories({ user }: StoryProps) {
     const router = useRouter();
+    const [fetching, setFetching] = useState<boolean>(false);
     const [stories, setStories] = useState<Story[]>([]);
 
     const fetchStories = async () => {
+        setFetching(true);
         const { data, error } = await supabase.from('stories').select('*').match({ user_id: user.id });;
 
         if (data) {
@@ -34,6 +36,7 @@ export default function Stories({ user }: StoryProps) {
         } else {
             error && console.error(error);
         }
+        setFetching(false);
     };
 
     const removeStory = async (story_id: string) => {
@@ -66,6 +69,8 @@ export default function Stories({ user }: StoryProps) {
                 </Link>
             </div>
             <div className={styles.stories}>
+                {fetching && 'Fetching user stories...'}
+                {!fetching && stories.length <= 0 && 'No stories found! Please add stories by clicking Add stories button.'}
                 {stories.map((story) => (
                     <Card key={story.id}
                         title={story.name}

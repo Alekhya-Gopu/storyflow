@@ -1,9 +1,9 @@
-import * as ReactSelect from 'react-select';
+import { default as ReactSelect, Props } from 'react-select';
 import styles from './Select.module.css';
 
-export default function Select(props: ReactSelect.Props) {
+export default function Select(props: Props) {
     return (
-        <ReactSelect.default
+        <ReactSelect
             className={styles.select}
             classNamePrefix="storyflow-select"
             {...props} />

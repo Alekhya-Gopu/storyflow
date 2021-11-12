@@ -4,7 +4,7 @@ import Icon from '@components/Icon';
 import Select from '@components/Select';
 import { supabase } from '@supabase/client';
 import { GetServerSideProps } from 'next';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { User } from '@supabase/supabase-js';
 import styles from '@styles/Create.module.css';
 import { toast } from 'react-toastify';
@@ -33,7 +33,7 @@ export default function Create({ user }: CreateProps) {
         { value: 'video', label: 'Video Link', placeholder: 'Paste Video link' },
         { value: 'youtube', label: 'YouTube', placeholder: 'Paste Youtube link' },
         { value: 'image', label: 'Image', placeholder: 'Paste Image link' },
-        { value: 'instagram', label: 'Instagram', placeholder: 'Paste Instagram photo URL' },
+        { value: 'instagram', label: 'Instagram', placeholder: 'Paste Instagram post URL' },
         { value: 'twitter', label: 'Twitter', placeholder: 'Paste tweet URL' },
         { value: 'tiktok', label: 'TikTok', placeholder: 'Paste TikTok URL' }
     ];
@@ -90,7 +90,7 @@ export default function Create({ user }: CreateProps) {
                 />
                 <Select
                     placeholder="Select Media Type"
-                    onChange={setSelectedMediaOption}
+                    onChange={option => setSelectedMediaOption(option as MediaOptions)}
                     options={mediaOptions}
                 />
                 <Input

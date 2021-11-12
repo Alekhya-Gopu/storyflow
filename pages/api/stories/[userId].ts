@@ -19,7 +19,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (userId) {
         const { data, error } = await supabase
             .from('stories')
-            .select('url')
+            .select('*')
             .eq('user_id', userId);
         if (error) {
             res.status(400).json(error);

@@ -19,7 +19,7 @@ const Login: NextPage = () => {
                 redirectTo: window.location.origin
             });
 
-            toast('Please check your inbox/spam folders in mailbox for magic link to login', { type: 'success' });
+            toast('Please check your inbox/spam folders in email for magic link to login', { type: 'success' });
 
             if (error) {
                 toast('Something went wrong. Please try again', { type: 'error' });

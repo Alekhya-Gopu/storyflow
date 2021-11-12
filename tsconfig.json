@@ -26,8 +26,8 @@
       "@components/*": [
         "./components/*"
       ],
-      "@firebase/*": [
-        "firebase/*"
+      "@utils/*": [
+        "utils/*"
       ],
       "@supabase/*": [
         "./supabase/*"

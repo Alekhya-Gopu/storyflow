@@ -18,7 +18,7 @@ const Home: NextPage = () => {
             within a new storytelling experience.</p>
         </h3>
         <Link href="/stories" passHref>
-          <Button size="large">Get Started <Icon type="arrow-right" /></Button>
+          <Button size="large">Try for Free <Icon type="arrow-right" /></Button>
         </Link>
       </div>
       <div className={styles.illustration}>

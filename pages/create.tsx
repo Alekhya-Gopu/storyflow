@@ -33,9 +33,9 @@ export default function Create({ user }: CreateProps) {
         { value: 'video', label: 'Video Link', placeholder: 'Paste Video link' },
         { value: 'youtube', label: 'YouTube', placeholder: 'Paste Youtube link' },
         { value: 'image', label: 'Image', placeholder: 'Paste Image link' },
-        { value: 'instagram', label: 'Instagram', placeholder: 'Paste Instagram post URL' },
-        { value: 'twitter', label: 'Twitter', placeholder: 'Paste tweet URL' },
-        { value: 'tiktok', label: 'TikTok', placeholder: 'Paste TikTok URL' }
+        // { value: 'instagram', label: 'Instagram', placeholder: 'Paste Instagram post URL' },
+        // { value: 'twitter', label: 'Twitter', placeholder: 'Paste tweet URL' },
+        // { value: 'tiktok', label: 'TikTok', placeholder: 'Paste TikTok URL' }
     ];
 
     const saveStory = async () => {

@@ -72,8 +72,7 @@ export default function Layout({ children }: LayoutProps) {
       <div className={styles.tryIt}>
         <Image src="/try-it-out.svg" alt="try it out" width={100} height={100} />
       </div>
-      <Script id="storyflow-script" src="https://storyflow-widget.vercel.app/main.bundle.js" data-storyflow-user="c9477f1b-ab00-40f9-8bd5-fe590fff1ddd" />
-      {/* <Script id="storyflow-script" src="http://localhost:8080/main.bundle.js" /> */}
+      <Script id="storyflow-script" src={process.env.NEXT_PUBLIC_STORYFLOW_WIDGET} />
     </div>
   )
 }

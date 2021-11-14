@@ -27,6 +27,8 @@ export default function Create({ user }: CreateProps) {
     const [description, setDescription] = useState<string>('');
     const [storyUrl, setStoryUrl] = useState<string>('');
     const [selectedMediaOption, setSelectedMediaOption] = useState<MediaOptions>();
+    const [ctaLink, setCtaLink] = useState<string>('');
+    const [ctaText, setCtaText] = useState<string>('');
     let mediaId = '';
 
     const mediaOptions: MediaOptions[] = [
@@ -54,6 +56,8 @@ export default function Create({ user }: CreateProps) {
             type: selectedMediaOption?.value,
             url: storyUrl,
             media_id: mediaId,
+            cta_link: ctaLink,
+            cta_text: ctaText,
             user_id: user.id,
         };
 
@@ -100,7 +104,18 @@ export default function Create({ user }: CreateProps) {
                     value={storyUrl}
                     onChange={(e) => setStoryUrl(e.target.value)}
                 />
-
+                <Input
+                    placeholder="Call to Action Link"
+                    icon="link"
+                    value={ctaLink}
+                    onChange={(e) => setCtaLink(e.target.value)}
+                />
+                <Input
+                    placeholder="Call to Action Link Text"
+                    icon="edit-3"
+                    value={ctaText}
+                    onChange={(e) => setCtaText(e.target.value)}
+                />
                 <div className={styles.submitBtn}>
                     <Button
                         size="large"

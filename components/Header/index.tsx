@@ -30,7 +30,7 @@ export default function Header({ authState, email }: HeaderProps) {
         <div className={styles.logo}>
           <Link href="/">
             <a>
-              <img src="/storyflow-logo.svg" alt="logo" width="150" height="50" />
+              <img src="/storyflow-logo.svg" alt="logo" width="200" height="50" />
             </a>
           </Link>
         </div>

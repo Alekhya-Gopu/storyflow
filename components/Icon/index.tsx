@@ -4,12 +4,14 @@ interface IconProps {
     type: string;
     size?: number;
     strokeWidth?: number;
+    onClick?: () => void;
 }
 
-export default function Icon({ type, size = 24, strokeWidth = 2 }: IconProps) {
+export default function Icon({ type, size = 24, strokeWidth = 2, onClick }: IconProps) {
     return (
         <svg
             className="icon"
+            onClick={onClick}
             viewBox="0 0 24 24"
             width={size}
             height={size}

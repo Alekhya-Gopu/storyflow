@@ -81,11 +81,13 @@ export default function Stories({ user }: StoryProps) {
                 {stories.map((story) => (
                     <Card key={story.id}
                         title={story.name}
+                        type={story.type}
                         description={story.description}
                         url={story.url}
                         id={story.id}
                         cardActions={[
-                            { icon: 'trash', action: () => removeStory(story.id) },
+                            { name: 'Delete', action: () => removeStory(story.id) },
+                            // { name: 'Update', action: () => updateStory(story.id) }
                         ]} />
                 ))}
             </div>

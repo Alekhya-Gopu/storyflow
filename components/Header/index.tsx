@@ -28,18 +28,12 @@ export default function Header({ authState, email }: HeaderProps) {
           </a>
         </div>
         <div className={styles.logo}>
-          <Link href="/">
-            <a>
-              <img src="/storyflow-logo.svg" alt="logo" width="200" height="50" />
-            </a>
-          </Link>
+          <img src="/storyflow-logo.svg" alt="logo" height="50" />
         </div>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link href="/">
-                <a>How it works</a>
-              </Link>
+              <a target="_blank" rel="noreferrer" href="https://amp.dev/documentation/tools/?format=stories">Tools</a>
             </li>
             <li className={styles.navItem}>
               <a href="https://calendly.com/src200" target="_blank" rel="noreferrer">Schedule a demo</a>
@@ -55,7 +49,7 @@ export default function Header({ authState, email }: HeaderProps) {
           <div className={styles.profile}>
             <Link href="/profile">
               <a>
-                <Icon type="user" /> <span>{email}</span>
+                <img height="45" alt="Avatar" src={`https://robohash.org/${email}`} />
               </a>
             </Link>
           </div>) : (

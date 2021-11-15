@@ -4,10 +4,11 @@
   align-items: center;
   justify-content: center;
 }
+.main .title {
+  width: 50%;
+}
 .main .title h1 {
   font-size: 2rem;
-  line-height: 0.5rem;
-  margin-bottom: 2.5rem;
 }
 .main .title span {
   color: var(--primary-color);
@@ -37,16 +38,18 @@
     align-items: center;
     justify-content: center;
   }
+  .main .title {
+    width: 100%;
+  }
   .main .title h1 {
     font-family: inherit;
-    font-size: 2rem;
-    line-height: 0.5rem;
+    font-size: 1.5rem;
     letter-spacing: -1px;
     font-weight: 700;
   }
   .main .title h3 {
     font-size: 1.3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   .main .title button {
     width: 100%;

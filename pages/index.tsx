@@ -11,13 +11,13 @@ const Home: NextPage = () => {
       <div className={styles.title}>
         <h1>
           Add Interactive <span>Web Stories </span>
-          to your Website with few bytes of JavaScript<span>.</span>
+          to your website with few bytes of JavaScript<span>.</span>
         </h1>
-        <h3>
-          <p>Web stories is a way to reach a unique audience
-            within a new storytelling experience.
-            Storyflow integration supercharges your user experience with a floating stories widget. </p>
-        </h3>
+        <p>
+          Web stories is a way to reach a unique audience
+          within a new storytelling experience.
+          Storyflow integration supercharges your user experience with a floating stories widget.
+        </p>
         <Link href="/stories" passHref>
           <Button size="large">Try for Free <Icon type="arrow-right" /></Button>
         </Link>

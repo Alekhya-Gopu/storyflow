@@ -32,6 +32,7 @@ export default function Create({ user }: CreateProps) {
     let mediaId = '';
 
     const mediaOptions: MediaOptions[] = [
+        { value: 'amp-story', label: 'Existing AMP Story', placeholder: 'Paste existing AMP story link' },
         { value: 'video', label: 'Video Link', placeholder: 'Paste Video link' },
         { value: 'youtube', label: 'YouTube', placeholder: 'Paste Youtube link' },
         { value: 'image', label: 'Image', placeholder: 'Paste Image link' },

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from './Header.module.css';
 import Icon from '@components/Icon';
+import Feedback from '@components/Feedback';
 import Link from 'next/link';
 
 interface HeaderProps {
@@ -28,7 +29,9 @@ export default function Header({ authState, email }: HeaderProps) {
           </a>
         </div>
         <div className={styles.logo}>
-          <img src="/storyflow-logo.svg" alt="logo" height="50" />
+          <Link href="/" passHref>
+            <img src="/storyflow-logo.svg" alt="logo" height="50" />
+          </Link>
         </div>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
@@ -39,9 +42,10 @@ export default function Header({ authState, email }: HeaderProps) {
               <a href="https://calendly.com/src200" target="_blank" rel="noreferrer">Schedule a demo</a>
             </li>
             <li className={styles.navItem}>
-              <Link href="/about">
-                <a>About</a>
-              </Link>
+              <a className={styles.feedbackItem}>Feedback</a>
+              <div className={styles.feedbackForm}>
+                <Feedback />
+              </div>
             </li>
           </ul>
         </nav>

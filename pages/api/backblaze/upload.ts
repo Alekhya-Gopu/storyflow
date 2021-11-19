@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             uploadAuthToken: authorizationToken,
             fileName: `${id}.html`,
             mime: 'text/html',
-            data: html,
+            data: Buffer.from(html),
             onUploadProgress: (event: any) => {
                 console.log(`Uploaded ${event.loaded} bytes`);
             }

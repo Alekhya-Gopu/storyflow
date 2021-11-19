@@ -1,4 +1,4 @@
-import * as B2 from 'backblaze-b2';
+import B2 from 'backblaze-b2';
 
 const b2 = new B2({
     apiUrl: 'https://api.backblazeb2.com/b2api/v2',

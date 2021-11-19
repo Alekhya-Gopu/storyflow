@@ -33,7 +33,7 @@ export default function Create({ user }: CreateProps) {
 
     const mediaOptions: MediaOptions[] = [
         { value: 'amp-story', label: 'Existing AMP Story', placeholder: 'Paste existing AMP story link' },
-        { value: 'video', label: 'Video Link', placeholder: 'Paste Video link' },
+        { value: 'video', label: 'Video', placeholder: 'Paste Video link' },
         { value: 'youtube', label: 'YouTube', placeholder: 'Paste Youtube link' },
         { value: 'image', label: 'Image', placeholder: 'Paste Image link' },
         // { value: 'instagram', label: 'Instagram', placeholder: 'Paste Instagram post URL' },
@@ -64,6 +64,8 @@ export default function Create({ user }: CreateProps) {
 
         const { data, error } = await supabase.from('stories').insert(story);
         if (data) {
+            await fetch(`/api/backblaze/upload?id=${user.id}`);
+            toast.success('Story created successfully');
             router.push('/stories');
         } else {
             toast('Something went wrong. Please try again', { type: 'error' });

@@ -10,7 +10,7 @@ const AMP_HTML = (stories: string) => `
     <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-    <title></title>
+    <title>Storyflow Preview</title>
     <link rel="canonical" href="" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
     <style amp-boilerplate>

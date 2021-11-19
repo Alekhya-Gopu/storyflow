@@ -75,7 +75,7 @@
 }
 .profile img {
   border-radius: 50%;
-  background: var(--gray-color);
+  background: var(--secondary-color);
   border: 2px solid var(--primary-color);
 }
 

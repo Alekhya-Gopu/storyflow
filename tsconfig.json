@@ -31,6 +31,12 @@
       ],
       "@supabase/*": [
         "./supabase/*"
+      ],
+      "@backblaze/*": [
+        "./backblaze/*"
+      ],
+      "@lib/*": [
+        "lib/*"
       ]
     }
   },
@@ -38,7 +44,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "firebase/firebase.ts"
   ],
   "exclude": [
     "node_modules"

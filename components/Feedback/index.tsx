@@ -15,22 +15,24 @@ export default function Feedback() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setSave(true);
-        const { data, error } = await supabase
-            .from('feedback')
-            .insert([
-                {
-                    email,
-                    message,
-                    emoji
-                },
-            ]);
-        setSave(false);
-        if (error) {
-            console.error(error);
-        }
-        if (data) {
-            toast.success('Thank you for your feedback!');
+        if (email) {
+            setSave(true);
+            const { data, error } = await supabase
+                .from('feedback')
+                .insert([
+                    {
+                        email,
+                        message,
+                        emoji
+                    },
+                ]);
+            setSave(false);
+            if (error) {
+                console.error(error);
+            }
+            if (data) {
+                toast.success('Thank you for your feedback!');
+            }
         }
     };
 

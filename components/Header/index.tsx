@@ -28,6 +28,13 @@ export default function Header({ authState, email }: HeaderProps) {
       </div>
       <nav className={`${!toggle ? styles.nav : styles.responsive}`}>
         <ul className={styles.navList}>
+          {authState === 'authenticated' ? (
+            <li className={styles.navItem}>
+              <Link href="/stories">
+                <a>Your Stories</a>
+              </Link>
+            </li>
+          ) : null}
           <li className={styles.navItem}>
             <a target="_blank" rel="noreferrer" href="https://amp.dev/documentation/tools/?format=stories">Tools</a>
           </li>

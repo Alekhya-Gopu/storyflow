@@ -4,6 +4,7 @@ import { supabase } from '@supabase/client';
 import Button from '@components/Button';
 import Input from '@components/Input';
 import Icon from '@components/Icon';
+import Image from 'next/image';
 import { toast } from 'react-toastify';
 import styles from '@styles/Login.module.css';
 
@@ -35,6 +36,7 @@ const Login: NextPage = () => {
 
     return (
         <div className={styles.login}>
+            <Image src="/welcome.svg" alt="Storyflow welcome cats" width={500} height={300} />
             <div className={styles.loginForm}>
                 <h3 className={styles.formLabel}>
                     <Icon type="user" size={28} /> Login

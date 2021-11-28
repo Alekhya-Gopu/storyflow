@@ -20,13 +20,11 @@ const Login: NextPage = () => {
                 redirectTo: window.location.origin
             });
 
-            toast('Please check your inbox/spam folders in email for magic link to login', { type: 'success' });
-
             if (error) {
                 toast('Something went wrong. Please try again', { type: 'error' });
+            } else {
+                toast('Please check your inbox/spam folders in email for magic link to login', { type: 'success' });
             }
-
-            console.log('Check your email for the login link!');
         } catch (error) {
             setLoading(false);
         } finally {
@@ -43,7 +41,7 @@ const Login: NextPage = () => {
                 </h3>
                 <form onSubmit={(e) => {
                     e.preventDefault();
-                    handleLogin(email);
+                    email && handleLogin(email);
                 }}>
                     <div className={styles.emailInput}>
                         <Input

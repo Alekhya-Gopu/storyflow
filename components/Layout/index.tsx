@@ -67,7 +67,7 @@ export default function Layout({ children }: LayoutProps) {
           {children}
         </div>
       </main>
-      <ToastContainer />
+      <ToastContainer toastClassName={styles.toastify} />
       <Footer />
       <div className={styles.tryIt}>
         <Image src="/try-it-out.svg" alt="try it out" width={100} height={100} />

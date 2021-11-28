@@ -19,6 +19,9 @@
     left: 80px;
     transition: ease-in-out 1s;
 }
+.toastify{
+    font-family: inherit !important;
+}
 
 @media (max-width: 600px) {
     .container {

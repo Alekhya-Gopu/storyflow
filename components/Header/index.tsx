@@ -2,6 +2,7 @@
 import styles from './Header.module.css';
 import Icon from '@components/Icon';
 import Feedback from '@components/Feedback';
+import MenuIcon from '@components/MenuIcon';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -17,9 +18,7 @@ export default function Header({ authState, email }: HeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles.menu}>
-        <a onClick={toggleResponsive}>
-          <Icon type="menu" />
-        </a>
+        <MenuIcon className={styles.menuIcon} onClick={toggleResponsive} />
       </div>
       <div className={styles.logo}>
         <Link href="/" passHref>

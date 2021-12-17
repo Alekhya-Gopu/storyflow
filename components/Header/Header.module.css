@@ -93,6 +93,7 @@
     left: 0;
     background: var(--secondary-color);
     display: block;
+    height: 90%;
   }
   .navList {
     display: block;

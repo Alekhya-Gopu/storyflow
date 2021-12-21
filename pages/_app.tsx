@@ -1,6 +1,7 @@
 import '@styles/globals.css';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import Layout from '@components/Layout';
+import NextNProgress from 'nextjs-progressbar';
 
 // export function reportWebVitals(metric: NextWebVitalsMetric) {
 //   const body = JSON.stringify(metric);
@@ -17,6 +18,7 @@ import Layout from '@components/Layout';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
+      <NextNProgress color="#ff7e1d" height={4} startPosition={0.2} options={{ showSpinner: false }} />
       <Component {...pageProps} />
     </Layout>
   )

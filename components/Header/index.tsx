@@ -40,12 +40,12 @@ export default function Header({ authState, email }: HeaderProps) {
           <li className={styles.navItem}>
             <a href="https://calendly.com/src200" target="_blank" rel="noreferrer">Schedule a demo</a>
           </li>
-          <li className={styles.navItem}>
+          {/* <li className={styles.navItem}>
             <a className={styles.feedbackItem}>Feedback</a>
             <div className={styles.feedbackForm}>
               <Feedback />
             </div>
-          </li>
+          </li> */}
         </ul>
       </nav>
       {authState === 'authenticated' ? (

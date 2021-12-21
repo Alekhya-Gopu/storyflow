@@ -94,6 +94,7 @@
     background: var(--secondary-color);
     display: block;
     height: 90%;
+    transition: all 0.75s ease;
   }
   .navList {
     display: block;

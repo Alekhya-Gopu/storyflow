@@ -89,27 +89,14 @@ const AMP_HTML = (stories: string) => `
 
     </html>`;
 
-// function generateCTALink(url: string, text: string = 'Call to action'): string {
-//     return `<amp-story-cta-layer>
-//           <a href="${url}"
-//             style="
-//                   position: absolute;
-//                   bottom: 5px;
-//                   left: 5px;
-//                   color: white;
-//                   font-family: sans-serif;
-//                   font-size: 14px;
-//                   font-weight: bold;
-//                   text-align: center;
-//                   text-decoration: none;
-//                   border-radius: 10px;
-//                   cursor: pointer;
-//                   background-color:#ff7e1d;
-//                   padding:8px;">
-//             ${text}
-//           </a>
-//         </amp-story-cta-layer>`;
-// }
+function generatePageOutLinks(url: string, text: string = 'Read more'): string | null {
+    if (!url) return null;
+    return `<amp-story-page-outlink layout="nodisplay">
+          <a href="${url}">
+            ${text}
+          </a>
+        </amp-story-page-outlink>`;
+}
 
 // generate story extension markup based on media type
 export function generateStoryExtensionMarkUp(media: any): string {
@@ -194,6 +181,7 @@ export default async function generateAMPhtml(userId: string) {
                     <amp-story-grid-layer template="fill">
                         ${generateStoryExtensionMarkUp(extensionStories)}
                     </amp-story-grid-layer>
+                    ${generatePageOutLinks(extensionStories.cta_link, extensionStories.cta_text)}
                 </amp-story-page>`)}
             </amp-story>`;
 

@@ -6,7 +6,6 @@ import styles from '@styles/Stories.module.css';
 import Button from '@components/Button';
 import Icon from '@components/Icon';
 import Card from '@components/Card';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 import { CopyBlock, atomOneLight } from "react-code-blocks";
@@ -24,7 +23,6 @@ interface Story {
 };
 
 export default function Stories({ user }: StoryProps) {
-    const router = useRouter();
     const [fetching, setFetching] = useState<boolean>(false);
     const [stories, setStories] = useState<Story[]>([]);
 
@@ -44,6 +42,7 @@ export default function Stories({ user }: StoryProps) {
     const removeStory = async (story_id: string) => {
         const { data, error } = await supabase.from('stories').delete().match({ id: story_id });
         if (data) {
+            await fetch(`/api/backblaze/upload?id=${user.id}`);
             fetchStories();
             toast('Removed story successfully!', { type: 'success' });
         }

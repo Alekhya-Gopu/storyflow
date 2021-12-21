@@ -107,18 +107,20 @@ export default function Create({ user }: CreateProps) {
                     value={storyUrl}
                     onChange={(e) => setStoryUrl(e.target.value)}
                 />
-                <Input
-                    placeholder="Call to Action Link"
-                    icon="link"
-                    value={ctaLink}
-                    onChange={(e) => setCtaLink(e.target.value)}
-                />
-                <Input
-                    placeholder="Call to Action Link Text"
-                    icon="edit-3"
-                    value={ctaText}
-                    onChange={(e) => setCtaText(e.target.value)}
-                />
+                {selectedMediaOption?.value !== 'amp-story' && (<>
+                    <Input
+                        placeholder="Call to Action Link"
+                        icon="link"
+                        value={ctaLink}
+                        onChange={(e) => setCtaLink(e.target.value)}
+                    />
+                    <Input
+                        placeholder="Call to Action Link Text"
+                        icon="edit-3"
+                        value={ctaText}
+                        onChange={(e) => setCtaText(e.target.value)}
+                    />
+                </>)}
                 <div className={styles.submitBtn}>
                     <Button
                         size="large"

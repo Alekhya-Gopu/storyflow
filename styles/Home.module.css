@@ -1,5 +1,7 @@
+.storyLayout {
+  /* margin: 2rem; */
+}
 .main {
-  margin-top: 8rem;
   display: flex;
   align-items: center;
   justify-content: center;

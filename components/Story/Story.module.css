@@ -55,8 +55,6 @@
 }
 
 .story .pages .page {
-    /* margin-top: 10rem; */
-    /* transition: all 0.5s ease; */
     width: 100%;
     margin: auto 0;
 }
@@ -64,4 +62,13 @@
 @keyframes fill {
     0% { width: 0; }
     100% { width: 100%; }
+}
+
+@media (max-width: 600px) {
+    .story .pages .page {
+        margin-top: -12px;
+    }
+    .story .content > svg {
+        display: none;
+    }
 }

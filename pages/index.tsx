@@ -8,7 +8,7 @@ import styles from '@styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
-    <Story className={styles.storyLayout} showNavigation>
+    <Story className={styles.storyLayout}>
       <Story.Page>
         <div className={styles.main}>
           <div className={styles.title}>
@@ -31,7 +31,6 @@ const Home: NextPage = () => {
         <div className={styles.main}>
           <div className={styles.title}>
             <h1>
-              <span>Storyflow</span> is a powerful tool to help you create and manage stories.
               <span>Integrate once</span> and manage multiple stories in one place<span>.</span>
             </h1>
             <p>

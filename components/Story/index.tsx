@@ -11,7 +11,6 @@ interface StoryProps {
 
 function Story({ className, children, showNavigation = false }: StoryProps) {
     const [currentPage, setCurrentPage] = useState<number>(0);
-    const [mount, setMount] = useState<boolean>(false);
     const pages = useRef<HTMLLIElement[]>(Array.from(children as HTMLCollectionOf<HTMLLIElement>));
 
     const navigateTo = (direction: 'next' | 'prev' | number): void => {
@@ -24,33 +23,24 @@ function Story({ className, children, showNavigation = false }: StoryProps) {
                 currentPage > 0 && setCurrentPage((prev) => prev - 1);
             }
         }
-
-        if (currentPage === pages.current.length - 1) {
-            setCurrentPage(0);
-        }
     }
 
-    useEffect(() => {
-        setMount(true);
-
-        // start playing story automatically
-        const timer = setInterval(() => {
-            navigateTo('next');
-        }, 8000);
-
-        return () => { clearInterval(timer) }
-    }, [currentPage]);
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
+        const horizontalCenter = window.innerWidth / 2;
+        const direction = e.pageX < horizontalCenter ? 'prev' : 'next';
+        navigateTo(direction);
+    }
 
     return (
         <div className={cn(styles.story, `${className}`)}>
             <ul className={styles.bars}>
-                {mount && pages.current.map((_, i) => (
-                    <li key={i} onClick={() => navigateTo(i)} className={cn(styles.bar, { [styles.active]: i === currentPage })}>
-                        <div className={styles.barInner} />
+                {pages.current && pages.current.map((_, i) => (
+                    <li key={i} onClick={() => navigateTo(i)} className={cn(styles.bar, { [styles.active]: i === currentPage || (i >= 0 && i <= currentPage) })}>
+                        <div className={cn(styles.barInner, { [styles.backgroundFill]: i < currentPage })} />
                     </li>
                 ))}
             </ul>
-            <div className={styles.content}>
+            <div className={styles.content} onClick={handleClick}>
                 {showNavigation && <Icon type="chevron-left" size={48} onClick={() => navigateTo('prev')} />}
                 <ul className={styles.pages}>
                     {pages.current.filter((_, i) => i === currentPage)}

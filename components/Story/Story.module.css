@@ -17,10 +17,16 @@
 .story .bars .bar {
     height: 5px;
     width: 24%;
-    margin: 0 5px;
+    margin: 0 3px;
     border-radius: 10px;
     cursor: pointer;
     background: var(--secondary-color);
+}
+.story .bars .bar:first-child {
+    margin-left: 0;
+}
+.story .bars .bar:last-child {
+    margin-right: 0;
 }
 .story .bars .bar.active .barInner {
     height: 5px;
